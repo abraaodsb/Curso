@@ -7,25 +7,25 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            string produto1 = "Computador preço $ 2100,00";
-            string produto2 = "Mesa de escritorio preço $ 650,50";
+            int n1 = 3 + 4 * 2;
+            int n2 = (3 + 4) * 2;
+            int n3 = 17 % 3;
+            double n4 = 10.0 / 8;
 
-            byte idade =  30, Anos, de, Idade;
-            int codigo = 5290;
-            char genero = 'm';
+            double a = 1.0, b = -3.0, c = -4.0;
 
-            double preco1 = 2100.50;
-            double preco2 = 650.50;
-            double Medida = 53.234567;
+            double delta = Math.Pow(b, 2.0) - 4.0 * a * c;
 
-            Console.WriteLine(produto1);
-            Console.WriteLine(produto2);
-            Console.WriteLine(idade);
-            Console.WriteLine(codigo);
-            Console.WriteLine(genero);
-            Console.WriteLine(preco1);
-            Console.WriteLine(preco2);
-            Console.WriteLine(Medida + Medida.ToString("F3", CultureInfo.InvariantCulture));
+            double x1 = (-b + Math.Sqrt(delta)) / (2.0 * a);
+            double x2 = (-b - Math.Sqrt(delta)) / (2.0 * a);
+
+            Console.WriteLine(n1);
+            Console.WriteLine(n2);
+            Console.WriteLine(n3);
+            Console.WriteLine(n4);
+            Console.WriteLine(delta);
+            Console.WriteLine(x1);
+            Console.WriteLine(x2);
         }
     }
 }
