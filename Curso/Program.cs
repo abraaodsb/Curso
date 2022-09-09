@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Curso
 {
@@ -6,15 +7,25 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            byte n1 = 126;
-            int n2 = 1000;
-            int n3 = 2147483647;
-            long n4 = 2147483648L;
+            string produto1 = "Computador preço $ 2100,00";
+            string produto2 = "Mesa de escritorio preço $ 650,50";
 
-            Console.WriteLine(n1);
-            Console.WriteLine(n2);
-            Console.WriteLine(n3);
-            Console.WriteLine(n4);
+            byte idade =  30, Anos, de, Idade;
+            int codigo = 5290;
+            char genero = 'm';
+
+            double preco1 = 2100.50;
+            double preco2 = 650.50;
+            double Medida = 53.234567;
+
+            Console.WriteLine(produto1);
+            Console.WriteLine(produto2);
+            Console.WriteLine(idade);
+            Console.WriteLine(codigo);
+            Console.WriteLine(genero);
+            Console.WriteLine(preco1);
+            Console.WriteLine(preco2);
+            Console.WriteLine(Medida + Medida.ToString("F3", CultureInfo.InvariantCulture));
         }
     }
 }
