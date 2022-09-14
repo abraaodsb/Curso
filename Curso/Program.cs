@@ -7,19 +7,34 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            bool c1 = 2 > 3 || 4 != 5; // true
-            bool c2 = !(2 > 3) && 4 != 5; // true
+            Console.WriteLine("digite tres números:");
+            int n1 = int.Parse(Console.ReadLine());
+            int n2 = int.Parse(Console.ReadLine());
+            int n3 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(c1);
-            Console.WriteLine(c2);
+            double resultado = Maior(n1, n2, n3);
 
-            Console.WriteLine("------------------------------");
+            Console.WriteLine("Maior = " + resultado);
+        }
 
-            bool c3 = 10 < 5; // false
-            bool c4 = c1 || c2 && c3; // true
 
-            Console.WriteLine(c3);
-            Console.WriteLine(c4);
+        static int Maior(int a, int b, int c)
+        {
+            int m;
+            if (a > b && a > c)
+            {
+                m = a;
+            }
+            else if (b > c)
+            {
+                m = b;
+            }
+            else
+            {
+                m = c;
+            }
+            return m;
         }
     }
 }
+
