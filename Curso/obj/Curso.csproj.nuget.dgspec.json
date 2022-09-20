@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\abraao\\source\\repos\\Curso\\Curso\\Curso.csproj": {}
+    "C:\\Users\\abraao\\source\\repos\\Curso_POO\\Curso\\Curso.csproj": {}
   },
   "projects": {
-    "C:\\Users\\abraao\\source\\repos\\Curso\\Curso\\Curso.csproj": {
+    "C:\\Users\\abraao\\source\\repos\\Curso_POO\\Curso\\Curso.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\abraao\\source\\repos\\Curso\\Curso\\Curso.csproj",
+        "projectUniqueName": "C:\\Users\\abraao\\source\\repos\\Curso_POO\\Curso\\Curso.csproj",
         "projectName": "Curso",
-        "projectPath": "C:\\Users\\abraao\\source\\repos\\Curso\\Curso\\Curso.csproj",
+        "projectPath": "C:\\Users\\abraao\\source\\repos\\Curso_POO\\Curso\\Curso.csproj",
         "packagesPath": "C:\\Users\\abraao\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\abraao\\source\\repos\\Curso\\Curso\\obj\\",
+        "outputPath": "C:\\Users\\abraao\\source\\repos\\Curso_POO\\Curso\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\abraao\\AppData\\Roaming\\NuGet\\NuGet.Config",
