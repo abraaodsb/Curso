@@ -7,18 +7,17 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            Console.Write("quantos numeros voce vai digitar? ");
-            int N = int.Parse(Console.ReadLine());
+            Produto p = new Produto();
 
-            int soma = 0;
-            for (int i = 1; i <= N; i++)
-            {
-                Console.WriteLine("valor #{0}: ",i);
-                int valor = int.Parse(Console.ReadLine());
-                soma += valor;
-            }
+            Console.WriteLine("Entre os dados do produto:");
+            Console.Write("Nome: ");
+            p.Nome = Console.ReadLine();
+            Console.Write("Preço: ");
+            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Quantidade no estoque: ");
+            p.Quantidade = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Soma = " + soma);
+            Console.WriteLine("Dados do produto: " + p);
         }
     }
 }
