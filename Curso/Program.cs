@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 
 namespace Curso
 {
@@ -9,15 +8,12 @@ namespace Curso
         {
 
 
-            Console.Write("Entre o valor do raio: ");
-            double raio = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Produto p = new Produto("TV", 500.00, 10);
 
-            double circ = Calculadora .Circunferencia(raio);
-            double volume = Calculadora .Volume(raio);
+            p.SetNome("TV 4K");
 
-            Console.WriteLine("Circunferencia: " + circ.ToString("F2", CultureInfo .InvariantCulture ));
-            Console.WriteLine("Volume: " + volume.ToString ("F2", CultureInfo .InvariantCulture ));
-            Console.WriteLine("Valor de PI: " + Calculadora .Pi.ToString("F2", CultureInfo .InvariantCulture ));
+            Console.WriteLine(p.GetNome());
+            Console.WriteLine(p.GetPreco());
         }
     }
 }

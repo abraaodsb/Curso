@@ -18,7 +18,6 @@ C:\Users\abraao\source\repos\Curso_POO\Curso\bin\Debug\netcoreapp3.1\Curso.runti
 C:\Users\abraao\source\repos\Curso_POO\Curso\bin\Debug\netcoreapp3.1\Curso.runtimeconfig.dev.json
 C:\Users\abraao\source\repos\Curso_POO\Curso\bin\Debug\netcoreapp3.1\Curso.dll
 C:\Users\abraao\source\repos\Curso_POO\Curso\bin\Debug\netcoreapp3.1\Curso.pdb
-C:\Users\abraao\source\repos\Curso_POO\Curso\obj\Debug\netcoreapp3.1\Curso.csproj.AssemblyReference.cache
 C:\Users\abraao\source\repos\Curso_POO\Curso\obj\Debug\netcoreapp3.1\Curso.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\abraao\source\repos\Curso_POO\Curso\obj\Debug\netcoreapp3.1\Curso.AssemblyInfoInputs.cache
 C:\Users\abraao\source\repos\Curso_POO\Curso\obj\Debug\netcoreapp3.1\Curso.AssemblyInfo.cs
