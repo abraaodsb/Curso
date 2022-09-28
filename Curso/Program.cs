@@ -6,14 +6,12 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-
-
-            Produto p = new Produto("TV", 500.00, 10);
-
-            p.SetNome("TV 4K");
-
-            Console.WriteLine(p.GetNome());
-            Console.WriteLine(p.GetPreco());
+            Point p;
+            p.x = 10;
+            p.y = 20;
+            Console.WriteLine(p);
+            p = new Point();
+            Console.WriteLine(p);
         }
     }
 }

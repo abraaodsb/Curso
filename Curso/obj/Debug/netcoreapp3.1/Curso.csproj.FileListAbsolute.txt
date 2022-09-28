@@ -25,3 +25,4 @@ C:\Users\abraao\source\repos\Curso_POO\Curso\obj\Debug\netcoreapp3.1\Curso.cspro
 C:\Users\abraao\source\repos\Curso_POO\Curso\obj\Debug\netcoreapp3.1\Curso.dll
 C:\Users\abraao\source\repos\Curso_POO\Curso\obj\Debug\netcoreapp3.1\Curso.pdb
 C:\Users\abraao\source\repos\Curso_POO\Curso\obj\Debug\netcoreapp3.1\Curso.genruntimeconfig.cache
+C:\Users\abraao\source\repos\Curso_POO\Curso\obj\Debug\netcoreapp3.1\Curso.csproj.AssemblyReference.cache
