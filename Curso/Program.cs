@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Curso
 {
@@ -6,24 +7,25 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            double? x = null;
-            double? y = 10.0;
+            int n = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(x.GetValueOrDefault ());
-            Console.WriteLine(y.GetValueOrDefault ());
+            Product[] vect = new Product[n];
 
-            Console.WriteLine(x.HasValue);
-            Console.WriteLine(y.HasValue);
+            for (int i = 0; i < n; i++)
+            {
+                string name = Console.ReadLine();
+                double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                vect[i] = new Product { Name = name, Price = price };
+            }
 
-            if (x.HasValue)
-                 Console.WriteLine(x.Value);
-            else
-                Console.WriteLine("x is null");
+            double sum = 0.0;
+            for (int i = 0; i < n; i++)
+            {
+                sum += vect[i].Price;
+            }
 
-            if(y.HasValue)
-                 Console.WriteLine(y.Value);
-            else
-                Console.WriteLine("y is null");
+            double avg = sum / n;
+            Console.WriteLine("AVERAGE PRICE = " + avg.ToString("F2", CultureInfo.InvariantCulture));
         }
     }
 }
