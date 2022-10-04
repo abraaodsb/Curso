@@ -7,10 +7,19 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            int a = 10;
-            int triple;
-            Calculator.Triple(a, out triple);
-            Console.WriteLine(triple);
+            string[] vect = new string[] { "maria", "alex", "bob" };
+
+            for (int i = 0; i < vect.Length; i++)
+            {
+                Console.WriteLine(vect[i]);
+            }
+
+            Console.WriteLine("----------------------------------- ");
+
+            foreach (string obj in vect)
+            {
+                Console.WriteLine(obj);
+            }
         }
     }
 }
