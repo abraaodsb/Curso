@@ -6,14 +6,9 @@ namespace Curso
 {
     class Calculator
     {
-        public  static int Sum(params int[] numbers)
+       public static void Triple( int origin, out int result)
         {
-            int sum = 0;
-            for (int i = 0; i < numbers.Length; i++)
-                sum += numbers[i];
-            {
-                return sum;
-            }
+            result = origin * 3;
         }
     }
 }
