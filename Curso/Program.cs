@@ -11,35 +11,11 @@ namespace Curso
             int x = int.Parse(Console.ReadLine());
             string day;
 
-           switch (x)
-            {
-                case 1:
-                    day = "sunday";
-                    break;
-                case 2:
-                    day = "monday";
-                    break;
-                case 3:
-                    day = "tuesday";
-                    break;
-                case 4:
-                    day = "wednesday";
-                    break;
-                case 5:
-                    day = "thursday";
-                    break;
-                case 6:
-                    day = "friday";
-                    break;
-                case 7:
-                    day = "saturday";
-                    break;
-                default:
-                    day = "invalid value";
-                    break;
-            }
+            double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine("day:" + day);
+            double desconto = (preco < 20.0) ? preco * 0.1 : preco * 0.05;
+
+            Console.WriteLine(desconto);
         }
     }
 }
