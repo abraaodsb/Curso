@@ -7,7 +7,7 @@ namespace Curso
     {
         private string _nome;
         public double Preco { get; private set; }
-        public  int Quantidade { get; private set; }
+        public int Quantidade { get; private set; }
         public Produto()
         {
 
@@ -24,13 +24,13 @@ namespace Curso
         public string Nome {
             get { return _nome; }
             set {
-                if (value  != null && value .Length > 1)
+                if (value != null && value.Length > 1)
                     _nome = value;
             }
         }
 
 
-      
+
         public Produto(string nome, double preco)
         {
             Nome = nome;
@@ -45,7 +45,7 @@ namespace Curso
 
         public void AdicionarProdutos(int quantidade)
         {
-           Quantidade += quantidade;
+            Quantidade += quantidade;
         }
 
         public void RemoverProdutos(int quantidade)

@@ -5,8 +5,8 @@ namespace Curso
 {
     class Produto_2
 
-    { 
-           
+    {
+
 
         public string Nome;
         public double Preco;
@@ -16,9 +16,9 @@ namespace Curso
         {
             Quantidade = 10;
         }
-        public Produto_2 (string nome, double preco, int quantidade) : this()
+        public Produto_2(string nome, double preco, int quantidade) : this()
         {
-        
+
             Nome = nome;
             Preco = preco;
             Quantidade = quantidade;
@@ -29,7 +29,7 @@ namespace Curso
             Nome = nome;
             Preco = preco;
             Quantidade = 5;
-            Quantidade = Quantidade; 
+            Quantidade = Quantidade;
         }
         public double ValorTotalEmEstoque()
         {
@@ -53,6 +53,6 @@ namespace Curso
             + " unidades, Total: $ "
             + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
         }
-        
+
     }
 }
