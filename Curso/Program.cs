@@ -8,14 +8,36 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            int x = int.Parse(Console.ReadLine());
-            string day;
+            string original = "abcde FGHI ABC abc DEFG ";
 
-            double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            string s1 = original.ToUpper();
+            string s2 = original.ToLower();
+            string s3 = original.Trim();
 
-            double desconto = (preco < 20.0) ? preco * 0.1 : preco * 0.05;
+            int n1 = original.IndexOf("bc");
+            int n2 = original.LastIndexOf("bc");
 
-            Console.WriteLine(desconto);
+            string s4 = original.Substring(3);
+            string s5 = original.Substring(3, 5);
+
+            string s6 = original.Replace('a', 'x');
+            string s7 = original.Replace("abc", "xy");
+
+            bool b1 = string.IsNullOrEmpty(original);
+            bool b2 = string.IsNullOrWhiteSpace(original);
+
+            Console.WriteLine("original:  -" + original + "-");
+            Console.WriteLine("ToUpper: -" + s1 + "-");
+            Console.WriteLine("ToLower: -" + s2 + "-");
+            Console.WriteLine("Trim: -" + s3 + "-");
+            Console.WriteLine("IndexOf('bc'): " + n1 );
+            Console.WriteLine("LastIndexOf('bc'): " + n2);
+            Console.WriteLine("Substring(3): " + s4 );
+            Console.WriteLine("Substring(3, 5): " + s5 );
+            Console.WriteLine("Replace('a', 'x'): " + s6 );
+            Console.WriteLine("Replace('abc', 'xy'): " + s7 );
+            Console.WriteLine("IsnullOrEmpty(): " + b1);
+            Console.WriteLine(" IsNullOrWhiteSpace(): " + b2);
         }
     }
 }
