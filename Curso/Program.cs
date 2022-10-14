@@ -6,21 +6,14 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            TimeSpan t1 =  TimeSpan.FromDays(1.5);
-            TimeSpan t2 =  TimeSpan.FromHours(1.5);
-            TimeSpan t3 =  TimeSpan.FromMinutes(1.5);
-            TimeSpan t4 =  TimeSpan.FromSeconds(1.5);
-            TimeSpan t5 =  TimeSpan.FromMilliseconds(1.5);
-            TimeSpan t6 =  TimeSpan.FromTicks(900000000L);
+            DateTime d1 = new DateTime(2000,10,15);
+
+            DateTime d2 = new DateTime(2000,10,18);
 
 
-            Console.WriteLine(t1);
-            Console.WriteLine(t2);
-            Console.WriteLine(t3);
-            Console.WriteLine(t4);
-            Console.WriteLine(t5);
-            Console.WriteLine(t6);
+            TimeSpan t = d2.Subtract(d1);
 
+            Console.WriteLine(t);
         }
     }
 }
