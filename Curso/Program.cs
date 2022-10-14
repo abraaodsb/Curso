@@ -6,18 +6,11 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            TimeSpan t1 = new TimeSpan(1, 30, 10);
-            TimeSpan t2 = new TimeSpan(0, 10, 5);
+            DateTime d1 = DateTime.Parse("2000-08-15 13:05:58");
+            DateTime d2 = DateTime.Parse("2000-08-15T13:05:58Z");
 
-            TimeSpan sum = t1.Add(t2);
-            TimeSpan dif = t1.Subtract(t2);
-            TimeSpan mult = t2.Multiply(2.0);
-            TimeSpan div = t2.Divide(2.0);
-
-            Console.WriteLine(sum);
-            Console.WriteLine(dif);
-            Console.WriteLine(mult);
-            Console.WriteLine(div);
+            Console.WriteLine(d1);
+            Console.WriteLine(d2);
         }
     }
 }
