@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Curso.Enums;
+using System;
 
 namespace Curso
 {
@@ -6,11 +7,21 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            DateTime d1 = DateTime.Parse("2000-08-15 13:05:58");
-            DateTime d2 = DateTime.Parse("2000-08-15T13:05:58Z");
+            Order order = new Order
+            {
+                id = 1080,
+                Moment = DateTime.Now,
+                status = OrderStatus.PendingPayment
+            };
 
-            Console.WriteLine(d1);
-            Console.WriteLine(d2);
+            Console.WriteLine(order);
+
+            string txt = OrderStatus.PendingPayment.ToString();
+
+            OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
+
+            Console.WriteLine(os);
+            Console.WriteLine(txt);
         }
     }
 }
