@@ -10,40 +10,32 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            List<Employee> list = new List<Employee>();
+            List<Account> list = new List<Account>();
 
-            Console.Write("Enter the number of employees: ");
-            int n = int.Parse(Console.ReadLine());
+            list.Add(new SavingsAccount(1001, "Alex", 500.0, 0.01));
+            list.Add(new BusinessAccount(1002, "Maria", 500.0, 400.0));
+            list.Add(new SavingsAccount(1003, "Bob", 500.0, 0.01));
+            list.Add(new BusinessAccount(1004, "Anna", 500.0, 500.0));
 
-            for (int i = 1; i <= n; i++)
+            double sum = 0.0;
+            foreach (Account acc in list)
             {
-                Console.WriteLine($"Employee #{i} date: ");
-                Console.Write("Outsourced (y/n)? ");
-                char ch = char.Parse(Console.ReadLine());
-                Console.Write("Name: ");
-                string name = Console.ReadLine();
-                Console.Write("Hours: ");
-                int hours = int.Parse(Console.ReadLine());
-                Console.Write("Value per hour: ");
-                double ValuePerHour = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
-                if (ch == 'y')
-                {
-                    Console.Write("Additional charge: ");
-                    double additionalCharge = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    list.Add(new OutsourcedEmployee(name, ValuePerHour, additionalCharge));
-                }
-                else
-                {
-                    list.Add(new Employee(name, hours, ValuePerHour));
-                }
+                sum += acc.Balance;
             }
 
-            Console.WriteLine();
-            Console.WriteLine("Payments: ");
-            foreach (Employee emp in list)
-            {
-                Console.WriteLine(emp.Name + " - $ " + emp.Payment().ToString("F2"), CultureInfo.InvariantCulture);
+            Console.WriteLine("Total balance: " + sum.ToString("F2",CultureInfo.InvariantCulture));
 
+            foreach (Account acc in list)
+            {
+                acc.Withdraw(10.0);
+            }
+
+            foreach (Account acc in list)
+            {
+                Console.WriteLine("Updated balance for account "
+                    + acc.Number 
+                    + ": "
+                    + acc.Balance.ToString("F2",CultureInfo.InvariantCulture));
             }
         }
     }
