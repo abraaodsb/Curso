@@ -3,6 +3,7 @@ using System;
 using Curso.Entities;
 using System.Globalization;
 using System.Collections.Generic;
+using Curso.Entities.Enums;
 
 namespace Curso
 {
@@ -10,32 +11,39 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            List<Account> list = new List<Account>();
+            List<Shape> list = new List<Shape>();
 
-            list.Add(new SavingsAccount(1001, "Alex", 500.0, 0.01));
-            list.Add(new BusinessAccount(1002, "Maria", 500.0, 400.0));
-            list.Add(new SavingsAccount(1003, "Bob", 500.0, 0.01));
-            list.Add(new BusinessAccount(1004, "Anna", 500.0, 500.0));
+            Console.Write("Enter the number of shapes: ");
+            int n = int.Parse(Console.ReadLine());
 
-            double sum = 0.0;
-            foreach (Account acc in list)
+            for (int i = 1; i <= n; i++)
             {
-                sum += acc.Balance;
+                Console.WriteLine($"Shape #{i} data: ");
+                Console.Write("Rectangle or Circle (r/c)? ");
+                char ch = char.Parse(Console.ReadLine());
+                Console.Write("Color (Black/Blue/Red): ");
+                Color color = Enum.Parse<Color>(Console.ReadLine());
+                if (ch == 'r')
+                {
+                    Console.Write("Width: ");
+                    double width = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    Console.Write("Heiht: ");
+                    double heiht = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    list.Add(new Rectangle(width, heiht, color));
+                }
+                else
+                {
+                    Console.Write("Radius: ");
+                    double radius = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    list.Add(new Circle(radius, color));
+                }
             }
-
-            Console.WriteLine("Total balance: " + sum.ToString("F2",CultureInfo.InvariantCulture));
-
-            foreach (Account acc in list)
+            Console.WriteLine();
+            Console.WriteLine("Shape Areas: ");
+            foreach (Shape shape in list)
             {
-                acc.Withdraw(10.0);
-            }
+                Console.WriteLine(shape.Area().ToString("F2", CultureInfo.InvariantCulture));
 
-            foreach (Account acc in list)
-            {
-                Console.WriteLine("Updated balance for account "
-                    + acc.Number 
-                    + ": "
-                    + acc.Balance.ToString("F2",CultureInfo.InvariantCulture));
             }
         }
     }
