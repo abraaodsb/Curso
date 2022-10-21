@@ -11,39 +11,21 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            List<Shape> list = new List<Shape>();
-
-            Console.Write("Enter the number of shapes: ");
-            int n = int.Parse(Console.ReadLine());
-
-            for (int i = 1; i <= n; i++)
+            try
             {
-                Console.WriteLine($"Shape #{i} data: ");
-                Console.Write("Rectangle or Circle (r/c)? ");
-                char ch = char.Parse(Console.ReadLine());
-                Console.Write("Color (Black/Blue/Red): ");
-                Color color = Enum.Parse<Color>(Console.ReadLine());
-                if (ch == 'r')
-                {
-                    Console.Write("Width: ");
-                    double width = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    Console.Write("Heiht: ");
-                    double heiht = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    list.Add(new Rectangle(width, heiht, color));
-                }
-                else
-                {
-                    Console.Write("Radius: ");
-                    double radius = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    list.Add(new Circle(radius, color));
-                }
+                int n1 = int.Parse(Console.ReadLine());
+                int n2 = int.Parse(Console.ReadLine());
+
+                int result = n1 / n2;
+                Console.WriteLine(result);
             }
-            Console.WriteLine();
-            Console.WriteLine("Shape Areas: ");
-            foreach (Shape shape in list)
+            catch(DivideByZeroException )
             {
-                Console.WriteLine(shape.Area().ToString("F2", CultureInfo.InvariantCulture));
-
+                Console.WriteLine("Division by zero is not allowed");
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Format error! " + e.Message);
             }
         }
     }
