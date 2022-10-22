@@ -4,6 +4,8 @@ using Curso.Entities;
 using System.Globalization;
 using System.Collections.Generic;
 using Curso.Entities.Enums;
+using Curso.Entities.Exceptions;
+
 
 namespace Curso
 {
@@ -11,19 +13,17 @@ namespace Curso
     {
         static void Main(string[] args)
         {
-            Console.Write("Room number: ");
-            int number = int.Parse(Console.ReadLine());
-            Console.Write("Check-in date (dd/MM/yyyy):");
-            DateTime checkIn = DateTime.Parse(Console.ReadLine());
-            Console.Write("Check-Out date (dd/MM/yyyy):");
-            DateTime checkOut = DateTime.Parse(Console.ReadLine());
+            try
+            { 
+                Console.Write("Room number: ");
+                int number = int.Parse(Console.ReadLine());
+                Console.Write("Check-in date (dd/MM/yyyy):");
+                DateTime checkIn = DateTime.Parse(Console.ReadLine());
+                Console.Write("Check-Out date (dd/MM/yyyy):");
+                DateTime checkOut = DateTime.Parse(Console.ReadLine());
 
-            if (checkOut <= checkIn)
-            {
-                Console.WriteLine("Error in reservation: checkOut date must be after check-in");
-            }
-            else
-            {
+            
+            
                 Reservation reservation = new Reservation(number, checkIn, checkOut);
                 Console.WriteLine("Reservation: " + reservation);
 
@@ -34,16 +34,13 @@ namespace Curso
                 Console.Write("Check-Out date (dd/MM/yyyy):");
                 checkOut = DateTime.Parse(Console.ReadLine());
 
-                string error = reservation.updateDates(checkIn, checkOut);
-
-                if (error != null)
-                {
-                    Console.WriteLine("Error in reservation: " + error);
-                }
-                else
-                {
-                    Console.WriteLine("Reservatiom: " + reservation);
-                }
+                reservation.updateDates(checkIn, checkOut);
+                Console.WriteLine("Reservatiom: " + reservation);
+                
+            }
+             catch (CannotUnloadAppDomainException e)
+            {
+                Console.WriteLine("Error in reservation: " + e.Message);
             }
         }
     }
