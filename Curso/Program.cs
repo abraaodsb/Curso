@@ -34,14 +34,14 @@ namespace Curso
                 Console.Write("Check-Out date (dd/MM/yyyy):");
                 checkOut = DateTime.Parse(Console.ReadLine());
 
-                DateTime now = DateTime.Now;
-                if (checkIn < now || checkOut < now)
+                string error = reservation.updateDates(checkIn, checkOut);
+
+                if (error != null)
                 {
-                    Console.WriteLine("Error in reservation dates for update must be future dates");
+                    Console.WriteLine("Error in reservation: " + error);
                 }
                 else
                 {
-                    reservation.updateDates(checkIn, checkOut);
                     Console.WriteLine("Reservatiom: " + reservation);
                 }
             }

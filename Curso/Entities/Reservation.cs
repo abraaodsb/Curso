@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Curso.Entities.Exceptions;
 
 namespace Curso.Entities
 {
@@ -14,10 +15,15 @@ namespace Curso.Entities
         {
         }
 
-        public Reservation(int roonNumber, DateTime checkin, DateTime checkOut)
+        public Reservation(int roonNumber, DateTime checkIn, DateTime checkOut)
         {
+            if (checkOut <= checkIn)
+            {
+                throw new DomainException("Check-Out date must be after check-in date");
+            }
+
             RoonNumber = roonNumber;
-            CheckIn = checkin;
+            CheckIn = checkIn;
             CheckOut = checkOut;
         }
          public int Duration()
@@ -26,11 +32,23 @@ namespace Curso.Entities
             return (int)duration.TotalDays;
         }
 
-        public void updateDates(DateTime checkIn, DateTime  checkOut)
+        public void  updateDates(DateTime checkIn, DateTime  checkOut)
         {
-            CheckIn = CheckIn;
-            CheckOut = CheckOut;
+            DateTime now = DateTime.Now;
+            if (checkIn < now || checkOut < now)
+            {
+                throw new DomainException( "reservation dates for update must be future dates");
+            }
+            if (checkOut <= checkIn)
+            {
+                throw new DomainException("Check-Out date must be after check-in date");
+            }
+
+            CheckIn = checkIn;
+            checkOut = checkOut;
+            
         }
+           
         public override string ToString()
         {
             return "Room"
