@@ -12,7 +12,7 @@ namespace Curso
 {
     class Program
     {
-         static void Main(string[] args)
+        static void Main(string[] args)
         {
             #region Program antigo
             //try
@@ -49,25 +49,33 @@ namespace Curso
 
 
             #region File/FileInfo/Exception
-            string sourcePath = @"c:\temp\file1.txt";
-            string targetPath = @"c:\temp\file2.txt";
-            try {
-                string[] lines = File.ReadAllLines(sourcePath);
-                using(StreamWriter sw = File.AppendText(targetPath))
+            string path = @"c:\temp\myfolder";
+
+            try
+            {
+                IEnumerable<string> folders = Directory.EnumerateDirectories(path, "*.*", SearchOption.AllDirectories);
+                Console.WriteLine("FOLDERS:");
+                foreach (string s in folders)
                 {
-                    foreach (string line in lines)
-                    {
-                        sw.WriteLine(line.ToUpper());
-                    }
+                    Console.WriteLine(s);
                 }
             }
-            catch (IOException e)
+
+
+
+             var files = Directory.EnumerateFiles(path, "*.*", SearchOption.AllDirectories);
+            Console.WriteLine("FILES:");
+            foreach (string s in files)
             {
-                Console.WriteLine("An error occurred");
-                Console.WriteLine(e.Message);
+                Console.WriteLine(s);
             }
-            #endregion
-            
+           
+            catch (IOException e)
+                {
+                    Console.WriteLine("An error occurred");
+                    Console.WriteLine(e.Message);
+                }
+                #endregion
         }
     }
 }
