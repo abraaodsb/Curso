@@ -12,7 +12,7 @@ namespace Curso.Entities.Services
         private BrazilTaxService brazilTaxService = new BrazilTaxService();
         
 
-        public RentalService(double pricePerHour, double pricePerDay)
+        public RentalService(double pricePerHour, double pricePerDay, BrazilTaxService brazilTaxService)
         {
             PricePerHour = pricePerHour;
             PricePerDay = pricePerDay;
