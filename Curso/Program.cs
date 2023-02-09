@@ -44,38 +44,52 @@ namespace Curso
 
             #endregion
 
-
             #region File/FileInfo/Exception
-            string path = @"c:\temp\myfolder\file1.txt";
+            //string path = @"c:\temp\myfolder\file1.txt";
 
-            Console.WriteLine("DirectorySeparatorChar: " + Path.DirectorySeparatorChar);
-            Console.WriteLine("PathSeparator: " + Path.PathSeparator);
-            Console.WriteLine("GetDirectoryName: " + Path.GetDirectoryName(path));
-            Console.WriteLine("GetFileName: " + Path.GetFileName(path));
+            //Console.WriteLine("DirectorySeparatorChar: " + Path.DirectorySeparatorChar);
+            //Console.WriteLine("PathSeparator: " + Path.PathSeparator);
+            //Console.WriteLine("GetDirectoryName: " + Path.GetDirectoryName(path));
+            //Console.WriteLine("GetFileName: " + Path.GetFileName(path));
             #endregion
 
             #region 
-            Console.WriteLine("Enter rental data");
-            Console.WriteLine("Car model: ");
-            string model = Console.ReadLine();
-            Console.WriteLine("Pickup (dd/mm/yyyy hh:ss): ");
-            DateTime start = DateTime.ParseExact(Console.ReadLine(), "dd/mm/yyyy HH:mm", CultureInfo.InvariantCulture );
-            Console.WriteLine("Return (dd/mm/yyyy hh:ss): ");
-            DateTime finish = DateTime.ParseExact(Console.ReadLine(), "dd/mm/yyyy HH:mm", CultureInfo.InvariantCulture);
+            // Console.WriteLine("Enter rental data");
+            //Console.WriteLine("Car model: ");
+            //string model = Console.ReadLine();
+            // Console.WriteLine("Pickup (dd/mm/yyyy hh:ss): ");
+            //DateTime start = DateTime.ParseExact(Console.ReadLine(), "dd/mm/yyyy HH:mm", CultureInfo.InvariantCulture );
+            //Console.WriteLine("Return (dd/mm/yyyy hh:ss): ");
+            //DateTime finish = DateTime.ParseExact(Console.ReadLine(), "dd/mm/yyyy HH:mm", CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Enter price per hour: ");
-            double hour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            Console.WriteLine("Enter price per Day: ");
-            double day = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //Console.WriteLine("Enter price per hour: ");
+            //double hour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //Console.WriteLine("Enter price per Day: ");
+            //double day = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            CarRental carRental = new CarRental(start, finish, new Vehicle(model));
+            //CarRental carRental = new CarRental(start, finish, new Vehicle(model));
 
-            RentalService rentalService = new RentalService(hour, day, new BrazilTaxService ());
+            //RentalService rentalService = new RentalService(hour, day, new BrazilTaxService ());
 
-            rentalService.ProcessInvoce(carRental);
+            //rentalService.ProcessInvoce(carRental);
 
-            Console.WriteLine("Invoice: ");
-            Console.WriteLine(carRental.Invoice);
+            //Console.WriteLine("Invoice: ");
+            //Console.WriteLine(carRental.Invoice);
+
+            #endregion
+            PrintService printService = new PrintService();
+
+            Console.Write("How many values? ");
+            int n = int.Parse(Console.ReadLine());
+            for (int i=0; i<n; i++)
+            {
+                int x = int.Parse(Console.ReadLine());
+                printService.AddValue(x);
+            }
+
+            printService.Print();
+            Console.WriteLine("First: " + printService .First ());
+            #region 
 
             #endregion
         }
