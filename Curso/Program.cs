@@ -77,20 +77,30 @@ namespace Curso
             //Console.WriteLine(carRental.Invoice);
 
             #endregion
-            PrintService printService = new PrintService();
+            //PrintService printService = new PrintService();
 
-            Console.Write("How many values? ");
-            int n = int.Parse(Console.ReadLine());
-            for (int i=0; i<n; i++)
+            //Console.Write("How many values? ");
+            //int n = int.Parse(Console.ReadLine());
+            //for (int i=0; i<n; i++)
             {
-                int x = int.Parse(Console.ReadLine());
-                printService.AddValue(x);
+              //  int x = int.Parse(Console.ReadLine());
+                //printService.AddValue(x);
             }
 
-            printService.Print();
-            Console.WriteLine("First: " + printService .First ());
+            //printService.Print();
+            //Console.WriteLine("First: " + printService .First ());
             #region 
 
+            #endregion
+            #region 
+            
+           Client a = new Client { Name = "Maria", Email = " maria@gmail.com"};
+           Client b = new Client { Name = "Alex", Email = " alex@gmail.com"};
+
+            Console.WriteLine(a.Equals(b));
+            Console.WriteLine(a == b);
+            Console.WriteLine(a.GetHashCode());
+            Console.WriteLine(b.GetHashCode());
             #endregion
         }
     }
