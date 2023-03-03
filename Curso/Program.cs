@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using Curso;
 using Curso.Entities.Services;
+using System.Collections.Generic;
 
 namespace Curso
 {
@@ -83,7 +84,7 @@ namespace Curso
             //int n = int.Parse(Console.ReadLine());
             //for (int i=0; i<n; i++)
             {
-              //  int x = int.Parse(Console.ReadLine());
+                //  int x = int.Parse(Console.ReadLine());
                 //printService.AddValue(x);
             }
 
@@ -93,15 +94,65 @@ namespace Curso
 
             #endregion
             #region 
-            
-           Client a = new Client { Name = "Maria", Email = " maria@gmail.com"};
-           Client b = new Client { Name = "Alex", Email = " alex@gmail.com"};
 
-            Console.WriteLine(a.Equals(b));
-            Console.WriteLine(a == b);
-            Console.WriteLine(a.GetHashCode());
-            Console.WriteLine(b.GetHashCode());
+            // Client a = new Client { Name = "Maria", Email = " maria@gmail.com"};
+            //Client b = new Client { Name = "Alex", Email = " alex@gmail.com"};
+
+            //Console.WriteLine(a.Equals(b));
+            //Console.WriteLine(a == b);
+            //Console.WriteLine(a.GetHashCode());
+            //Console.WriteLine(b.GetHashCode());
             #endregion
+            #region 
+            //SortedSet<int> a = new SortedSet<int>() { 0, 2, 4, 6, 8, 10 };
+            //SortedSet<int> b = new SortedSet<int>() { 5, 6, 7, 8, 9, 10 };
+
+            //union
+            //SortedSet<int> c = new SortedSet<int>(a);
+            //c.UnionWith(b);
+            //printCollection(c);
+            //{
+            //  static void printCollection<T>(IEnumerable<T> collection)
+            //{
+            //  foreach (T obj in collection)
+            //{
+            //  Console.Write(obj + " ");
+            //}
+            //Console.WriteLine();
+            //}
+            //}
+
+            #endregion
+            #region
+            Dictionary<string, string> cookies = new Dictionary<string, string>();
+
+            cookies["user"] = "maria";
+            cookies["email"] = "maria@gmeil.com";
+            cookies["phone"] = "9464546";
+            cookies["phone"] = "9646986656";
+
+            Console.WriteLine(cookies ["email"]);
+            Console.WriteLine(cookies ["phone"]);
+
+            cookies.Remove("email");
+
+            if (cookies .ContainsKey("email"))
+            {
+                Console.WriteLine(cookies ["email"]);
+            }
+            else
+            {
+                Console.WriteLine("There is no 'email' key");
+            }
+            Console.WriteLine("size: cookies:");
+
+            Console.WriteLine("ALL COOKIES:");
+            foreach (KeyValuePair < string, string> item in cookies)
+            {
+                Console.WriteLine(item.Key + ": " + item.Value);
+            }
+            #endregion
+
         }
     }
 }
