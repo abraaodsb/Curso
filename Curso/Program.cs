@@ -5,6 +5,7 @@ using System.IO;
 using Curso;
 using Curso.Entities.Services;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Curso
 {
@@ -124,35 +125,75 @@ namespace Curso
 
             #endregion
             #region
-            Dictionary<string, string> cookies = new Dictionary<string, string>();
+            //Dictionary<string, string> cookies = new Dictionary<string, string>();
 
-            cookies["user"] = "maria";
-            cookies["email"] = "maria@gmeil.com";
-            cookies["phone"] = "9464546";
-            cookies["phone"] = "9646986656";
+            //cookies["user"] = "maria";
+            //cookies["email"] = "maria@gmeil.com";
+            //cookies["phone"] = "9464546";
+            //cookies["phone"] = "9646986656";
 
-            Console.WriteLine(cookies ["email"]);
-            Console.WriteLine(cookies ["phone"]);
+            //Console.WriteLine(cookies ["email"]);
+            //Console.WriteLine(cookies ["phone"]);
 
-            cookies.Remove("email");
+            //cookies.Remove("email");
 
-            if (cookies .ContainsKey("email"))
-            {
-                Console.WriteLine(cookies ["email"]);
-            }
-            else
-            {
-                Console.WriteLine("There is no 'email' key");
-            }
-            Console.WriteLine("size: cookies:");
+            //if (cookies .ContainsKey("email"))
+            //{
+            //    Console.WriteLine(cookies ["email"]);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("There is no 'email' key");
+            //}
+            //Console.WriteLine("size: cookies:");
 
-            Console.WriteLine("ALL COOKIES:");
-            foreach (KeyValuePair < string, string> item in cookies)
-            {
-                Console.WriteLine(item.Key + ": " + item.Value);
-            }
+            //Console.WriteLine("ALL COOKIES:");
+            //foreach (KeyValuePair < string, string> item in cookies)
+            //{
+            //    Console.WriteLine(item.Key + ": " + item.Value);
+            //}
             #endregion
+            #region 
+            //// Specify the data Source 
+            //int[] numbers = new int[] { 2, 3, 4, 5 };
 
+            ////Define the query expression 
+            //var result = numbers.Where(x => x % 2 == 0).Select(x => x * 10);
+
+            //// execute the query
+            //foreach (int x in result)
+            //{
+            //    Console.WriteLine(x);
+            //}
+            #endregion
+            #region 
+
+            Console.Write("enter full file path: ");
+            string path = Console.ReadLine();
+
+            List<Product> list = new List<Product>();
+
+            using (StreamReader sr = File.OpenText(path))
+            {
+                while (! sr.EndOfStream)
+                {
+                    string[] fields = sr.ReadLine().Split(',');
+                    string name = fields[0];
+                    double price = double.Parse(fields[1], CultureInfo.InvariantCulture);
+                    list.Add(new Product(name, price));
+                }
+            }
+
+            var avg = list.Select(p => p.Price). DefaultIfEmpty(0.0).Average();
+            Console.WriteLine("Averrage price = " + avg.ToString ("F2", CultureInfo .InvariantCulture ));
+
+            var names = list.Where(p => p.Price < avg).OrderByDescending(p => p.Name).Select(p => p.Name);
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
+
+            #endregion 
         }
     }
 }
